@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const user_models = require('./user_models');
+
 
 // Creation du schéma due données
 const sauceSchema = mongoose.Schema({
@@ -10,10 +10,10 @@ const sauceSchema = mongoose.Schema({
     mainPepper: {type: String, required: true},
     imageUrl: {type: String, required: true},
     heat: {type: Number, required: true},
-    likes: {type: Number},
-    dislikes: {type: Number},
-    userLiked: {type: [String]},
-    userDisliked: {type: [String]},
+    likes: {type: Number, required: true},
+    dislikes: {type: Number, required: true},
+    userLiked: {type: [String], required: true},
+    userDisliked: {type: [String], required: true},
 
 })
 
