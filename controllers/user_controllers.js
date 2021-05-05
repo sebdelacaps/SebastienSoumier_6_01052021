@@ -4,7 +4,7 @@ const jwt = require('jsonwebtoken')
 
 exports.signup = (req, res, next) => {
 
-//   bcrypt est une fonction asynchrone
+  //   bcrypt est une fonction asynchrone
     bcrypt.hash(req.body.password, 10)
  
   .then(hash => {

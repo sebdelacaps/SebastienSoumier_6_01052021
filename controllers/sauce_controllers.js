@@ -81,8 +81,7 @@ exports.deleteSauce = (req, res, next) => {
     case 0 : //if user changes his/her mind
 
    Sauce.findOne({userLiked: {$in : req.body.userId}}).then((result) => {
-     console.log(result)
-    if (result) {
+      if (result) {
       Sauce.updateOne({_id: req.params.id}, {$inc: {likes: -1}, $pull: {userLiked: req.body.userId}} )
       .then(() => res.status(200).json({message: 'Like retiré!'}))
       .catch(error => res.status(400).json({error}));
